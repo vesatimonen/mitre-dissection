@@ -1,26 +1,23 @@
-# DISSECTING A MITRE
+<h1 style="text-align: center;">DISSECTING A MITRE</h1>
 
-## INTRODUCTION
+<h2 style="text-align: center;">INTRODUCTION</h2>
 
-## HISTORY
+<h2 style="text-align: center;">HISTORY</h2>
 
-## SOFTWARE
+<h2 style="text-align: center;">SOFTWARE</h2>
 (Software algorithms.)
 
-## SOLUTIONS
-
-<h2 style="text-align: center;">H3 that is center aligned</h2>
+<h2 style="text-align: center;">SOLUTIONS</h2>
 
 <p align="center">
-    TESTTEST
     <img src="images/mitre_presentation.png" align="top" />
 </p>
 
 
-## PROOF
+<h2 style="text-align: center;">PROOF</h2>
 <p align="center">
     <img src="images/visual_proof.png" align="top" />
 </p>
 
-## REFERENCES
+<h2 style="text-align: center;">REFERENCES</h2>
 (Links to magazines and books.)
