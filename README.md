@@ -1,23 +1,35 @@
-<h1 style="text-align: center;">DISSECTING A MITRE</h1>
 
-<h2 style="text-align: center;">INTRODUCTION</h2>
+<div style="text-align: center; max-width: 500px; margin: auto;">
 
-<h2 style="text-align: center;">HISTORY</h2>
 
-<h2 style="text-align: center;">SOFTWARE</h2>
-(Software algorithms.)
+# DISSECTING A MITRE
 
-<h2 style="text-align: center;">SOLUTIONS</h2>
+
+## HISTORY
+Dissection p
+This is a centered paragraph with a maximum width defined using HTML and CSS.<br>
+sdfsdfasdasd sada sd ada dsd
 
 <p align="center">
     <img src="images/mitre_presentation.png" align="top" />
 </p>
 
 
-<h2 style="text-align: center;">PROOF</h2>
+## PROOF
+
 <p align="center">
     <img src="images/visual_proof.png" align="top" />
 </p>
 
-<h2 style="text-align: center;">REFERENCES</h2>
-(Links to magazines and books.)
+
+## SOFTWARE
+(Software algorithms.)
+
+
+## REFERENCES
+[1] [https://arxiv.org/pdf/1012.0827](https://arxiv.org/pdf/1012.0827)
+
+
+
+<\div>
+
