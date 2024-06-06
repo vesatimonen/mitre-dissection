@@ -55,33 +55,45 @@
             Since Dudeney's revelation, several individuals have proposed new 5-piece solutions.
             <a href="https://mp.weixin.qq.com/s/Kb_oBJUdloy09loHT3cdqQ"> [Wei] </a><br><br>
 
-            The quest for a 4-piece solution has continued until recently (May 2024). This solution has one piece (green) that is flipped over, leaving room for further improvement.
-
+            The quest for a 4-piece solution has continued until recently (May 2024). This solution has one piece (green) that is flipped over, leaving room for further improvement.<br>
+            <br>
             <p align="center">
                 <img src="images/mitre_presentation.png" align="top" style="border: 1px solid black;"/>
             </p>
             <br>
 
-            <!-- PROOF -->
-            <h2 style="text-align: center;">PROOF</h2>
+
+        <!-- PROOF -->
+        <h2 style="text-align: center;">PROOF</h2>
             <p align="center">
                 <img src="images/visual_proof.png" align="top" style="border: 1px solid black;"/>
             </p>
             <br>
 
 
-            <!-- SOFTWARE -->
-            <h2 style="text-align: center;">SOFTWARE</h2>
-                (Software algorithms.)
+        <!-- SOFTWARE -->
+        <h2 style="text-align: center;">SOFTWARE</h2>
+            An optimizer software was developed to solve dissection puzzles:<br>
 
-            <!-- 5-PIECE SOLUTIONS -->
-            <h2 style="text-align: center;">5-PIECE SOLUTIONS</h2>
+            <ol>
+                <li>The software receives a dissection puzzle as input, consisting of two polygons (provided as lists of vertex points) and the number of allowed cuts.</li><br>
+                <li>It begins by randomizing the initial cuts and dissection fitness value is calculated comparing polygons between two dissections using turning function values.</li><br>
+                <li>Subsequently, the software optimizes the dissection fitness by making incremental adjustments to the cut lines. This process utilizes simulated annealing to progressively refine the cuts over a set number of iterations. If the fitness value becomes sufficiently small, the configuration is considered a potential solution.</li>
+            </ol>
+
+            All calculations are performed numerically and verified manually. Currently, verification is done using geometric constraint-solving software (the sketch tool in a CAD program). <br><br>
+
+            At present, the software cannot handle curved lines. Incorporating curved lines could potentially lead to numerous new 5-piece (or even 4-piece) solutions. Another interesting area of exploration is using fractal cutting lines.<br><br>
 
 
-            <!-- REFERENCES -->
-            <h1 style="text-align: center;">REFERENCES</h1>
-            <p style="text-align: left; font-family: Courier New; font-size: 0.7em;">
+        <!-- 5-PIECE SOLUTIONS -->
+        <h2 style="text-align: center;">5-PIECE SOLUTIONS</h2>
+            There are infinitely many solutions to the mitre puzzle, as cutting lines, in some solutions, can be smoothly shifted to generate numerous new dissections.<br>
+            There is a small chance that some of the solutions are not mathematically accurate, even though they are numerically very close.<br>
 
+
+        <!-- REFERENCES -->
+        <h1 style="text-align: center;">REFERENCES</h1>
             <table border="0" style="text-align: left; font-family: Courier New; font-size: 0.7em;">
                 <tr> <th> <a href="https://arxiv.org/pdf/1012.0827">                                           [Blanvillain, 2010] </a></th>  <th>Blanvillain, Christian; Pach, Janos (2010). "Square Trisection". </th> </tr>
                 <tr> <th> <a href="https://archive.org/details/TheStrandMagazineVolume41/page/746">            [Dudeney, 1911a] </a></th>     <th>Dudeney, Henry Ernest (1911). "Perplexities". The Strand Magazine Vol. 41. (p. 746). </th> </tr>
@@ -96,14 +108,8 @@
                 <tr> <th> <a href="https://mp.weixin.qq.com/s/Kb_oBJUdloy09loHT3cdqQ">                         [Wei] </a></th>                <th>Wei, Fu (2024, May 31). "Origami idea solves century-old math problem". </th> </tr>
                 <tr> <th> <a href="https://mathworld.wolfram.com/Dissection.html">                             [Wolfram] </a></th>            <th>Theobald, Gavin; Weisstein, Eric W. "Dissection". </th> </tr>
                 <tr> <th> <a href="https://en.wikipedia.org/wiki/Dissection_puzzle">                           [Wikipedia] </a></th>          <th>Wikipedia (2024, May 31). "Dissection puzzle". </th> </tr>
-
-
-
-
-
             </table>
 
-            </p>
 
     </body>
 </html>
