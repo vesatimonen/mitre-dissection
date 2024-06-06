@@ -1,3 +1,2 @@
-## MITRE DISSECTION PUZZLE
+## [MITRE DISSECTION PUZZLE](https://vesatimonen.github.io/mitre-dissection/index.html)
 
-[Open index.html](https://vesatimonen.github.io/mitre-dissection/index.html)
