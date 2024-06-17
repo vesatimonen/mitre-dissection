@@ -95,6 +95,130 @@
             </a>
             <br>
 
+        <!-- 4-PIECE SOLUTIONS -->
+        <h2 style="text-align: center;">THE 4-PIECE SOLUTION</h2>
+            In the 4-piece solution, the cutting lines can be adjusted smoothly to generate infinitely many solutions to the mitre puzzle.<br><br>
+            <a href="images/4-piece_animation.svg">
+                <img src="images/4-piece_animation.svg" style="border: none; display: block; margin: 0 auto;"/>
+            </a>
+            <br>
+
+            <details>
+                <summary>The 4-piece solution exact coordinates.</summary>
+                <pre style="margin: auto; font-family: Courier New; font-size: 0.7em; background-color: #F8F8F8;">
+
+
+                    double a = 2.0 / sqrt(3.0) - 1.0;
+                    double b = 2.0 - sqrt(3.0);
+                    double c = 1.0 - 1.0 / sqrt(3.0);
+                    double d = sqrt(3.0) - 1.0;
+                    double e = 2.0 / sqrt(3.0);
+
+                    /* Animation start vertices for mitre shape */
+                    struct polygon mitreA_polygons[] = {
+                        {vertex_count: 5, vertex: { {0.0, 0.0},
+                                                    {e / 2.0, e / 2.0},
+                                                    {e, 0.0},
+                                                    {d, d},
+                                                    {0.0, 2 * a} }},
+                        {vertex_count: 4, vertex: { {e, 0.0},
+                                                    {e, 2 * a},
+                                                    {e - b / 2.0, d - 0.5},
+                                                    {e, 0.0} }},
+                        {vertex_count: 6, vertex: { {e - b / 2.0, d - 0.5},
+                                                    {e, 2 * a},
+                                                    {e, e},
+                                                    {d, e},
+                                                    {d, e},
+                                                    {d + c / 2.0, d / 2.0} }},
+                        {vertex_count: 6, vertex: { {d + c / 2.0, d / 2.0},
+                                                    {d, e},
+                                                    {d, e},
+                                                    {0.0, e},
+                                                    {0.0, 2 * a},
+                                                    {d, d} }}
+                    };
+
+                    /* Animation end vertices for mitre shape */
+                    struct polygon mitreB_polygons[] = {
+                        {vertex_count: 5, vertex: { {0.0, 0.0},
+                                                    {e / 2.0, e / 2.0},
+                                                    {0.5 + e / 4.0, d / 2.0},
+                                                    {0.5, 3.0 * e / 4.0},
+                                                    {0.0, e / 2.0} }},
+                        {vertex_count: 4, vertex: { {e, 0.0},
+                                                    {e, e / 2.0},
+                                                    {0.5 + e / 4.0, d / 2.0},
+                                                    {0.5 + e / 4.0, d / 2.0} }},
+                        {vertex_count: 6, vertex: { {0.5 + e / 4.0, d / 2.0},
+                                                    {e, e / 2.0},
+                                                    {e, e},
+                                                    {1.0, e},
+                                                    {0.5, 1.0},
+                                                    {e / 2.0, d} }},
+                        {vertex_count: 6, vertex: { {e / 2.0, d},
+                                                    {0.5, 1.0},
+                                                    {1.0, e},
+                                                    {0.0, e},
+                                                    {0.0, e / 2.0},
+                                                    {0.5, 3.0 * e / 4.0} }}
+                    };
+
+                    /* Animation start vertices for square shape */
+                    struct polygon squareA_polygons[] = {
+                        {vertex_count: 5, vertex: { {a, 0.0},
+                                                    {1.0, 0.0},
+                                                    {1.0, 1.0 - a},
+                                                    {d, 1.0},
+                                                    {d + c / 2.0, c / 2.0} }},
+                        {vertex_count: 4, vertex: { {d, 1.0},
+                                                    {1.0, 1.0 - a},
+                                                    {1.0, 1.0},
+                                                    {d, 1.0} }},
+                        {vertex_count: 6, vertex: { {0.0, 0.0},
+                                                    {a, 0.0},
+                                                    {d + c / 2.0, c / 2.0},
+                                                    {d + c / 2.0, c / 2.0},
+                                                    {d, e / 2.0},
+                                                    {0.0, a} }},
+                        {vertex_count: 6, vertex: { {0.0, a},
+                                                    {d, e / 2.0},
+                                                    {d + c / 2.0, c / 2.0},
+                                                    {d, 1.0},
+                                                    {d, 1.0},
+                                                    {0.0, 1.0} }},
+                    };
+
+                    /* Animation end vertices for square shape */
+                    struct polygon squareB_polygons[] = {
+                        {vertex_count: 5, vertex: { {c, 0.0},
+                                                    {1.0, 0.0},
+                                                    {1.0, e / 2.0},
+                                                    {0.5, 3.0 * e / 4.0},
+                                                    {1.0 - e / 4.0, a / 2.0} }},
+                        {vertex_count: 4, vertex: { {0.5, 3.0 * e / 4.0},
+                                                    {1.0, e / 2.0},
+                                                    {1.0, 1.0},
+                                                    {1.0, 1.0} }},
+                        {vertex_count: 6, vertex: { {0.0, 0.0},
+                                                    {c, 0.0},
+                                                    {1.0 - e / 4.0, a / 2.0},
+                                                    {e / 2.0, e/ 2.0},
+                                                    {0.5, 1 - e / 4.0},
+                                                    {0.0, c} }},
+                        {vertex_count: 6, vertex: { {0.0, c},
+                                                    {0.5, 1 - e / 4.0},
+                                                    {e / 2.0, e / 2.0},
+                                                    {0.5, 3.0 * e / 4.0},
+                                                    {1.0, 1.0},
+                                                    {0.0, 1.0} }},
+                    };
+                </pre>
+            </details>
+
+            <br><br>
+
+
 
         <!-- REFERENCES -->
         <h2 style="text-align: center;">REFERENCES</h2>
