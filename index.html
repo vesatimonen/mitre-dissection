@@ -25,7 +25,7 @@
                 background: transparent;
                 max-width: 95vw;
                 max-height: 95vh;
-                cursor: zoom-out;
+                overflow: auto;
             }
             #lightbox::backdrop {
                 background: rgba(0, 0, 0, 0.85);
@@ -35,6 +35,16 @@
                 max-width: 95vw;
                 max-height: 95vh;
                 background: white;
+            }
+            /* image bigger than window, can zoom */
+            #lightbox.zoomable img {
+                cursor: zoom-in;
+            }
+            /* full size image, scroll to move */
+            #lightbox.zoomed img {
+                max-width: none;
+                max-height: none;
+                cursor: zoom-out;
             }
             width: auto
         </style>
@@ -308,14 +318,43 @@
             // free image after close
             function clearLightbox() {
                 lightboxImage.src = "";
+                lightbox.classList.remove("zoomable", "zoomed");
+            }
+
+            // mark zoomable if image was shrunk to fit
+            function checkZoomable() {
+                const shrunk = lightboxImage.naturalWidth > lightboxImage.clientWidth
+                    || lightboxImage.naturalHeight > lightboxImage.clientHeight;
+                lightbox.classList.toggle("zoomable", shrunk);
+            }
+
+            // zoom in and keep clicked point under mouse
+            function zoomIn(event) {
+                const fractionX = event.offsetX / lightboxImage.clientWidth;
+                const fractionY = event.offsetY / lightboxImage.clientHeight;
+                lightbox.classList.add("zoomed");
+                lightbox.scrollLeft = fractionX * lightboxImage.clientWidth - event.offsetX;
+                lightbox.scrollTop = fractionY * lightboxImage.clientHeight - event.offsetY;
+            }
+
+            // image click zooms, backdrop click closes
+            function handleLightboxClick(event) {
+                if (event.target !== lightboxImage) {
+                    lightbox.close();
+                } else if (lightbox.classList.contains("zoomed")) {
+                    lightbox.classList.remove("zoomed");
+                } else if (lightbox.classList.contains("zoomable")) {
+                    zoomIn(event);
+                } else {
+                    lightbox.close();
+                }
             }
 
             document.querySelectorAll('a[href^="images/"]').forEach(function (link) {
                 link.addEventListener("click", openLightbox);
             });
-            lightbox.addEventListener("click", function () {
-                lightbox.close();
-            });
+            lightboxImage.addEventListener("load", checkZoomable);
+            lightbox.addEventListener("click", handleLightboxClick);
             lightbox.addEventListener("close", clearLightbox);
         </script>
     </body>
