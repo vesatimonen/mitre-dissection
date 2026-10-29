@@ -18,6 +18,24 @@
                 font-weight: normal;
                 padding-right: 10px;
             }
+            /* full screen image viewer */
+            #lightbox {
+                border: none;
+                padding: 0;
+                background: transparent;
+                max-width: 95vw;
+                max-height: 95vh;
+                cursor: zoom-out;
+            }
+            #lightbox::backdrop {
+                background: rgba(0, 0, 0, 0.85);
+            }
+            #lightbox img {
+                display: block;
+                max-width: 95vw;
+                max-height: 95vh;
+                background: white;
+            }
             width: auto
         </style>
     </head>
@@ -242,6 +260,14 @@
             </a>
             <br>
 
+        <h3 style="text-align: center;">EQUILATERAL TRIANGLE DISSECTIONS</h3>
+            Dissecting an equilateral triangle into similar shapes of different sizes.<br><br>
+
+            <a href="images/equilateral_triangle_dissections_640x1080.png">
+                <img src="images/equilateral_triangle_dissections_640x1080.png" style="border: 1px solid black; border-radius: 20px; display: block; margin: 0 auto;"/>
+            </a>
+            <br>
+
 
 
         <!-- REFERENCES -->
@@ -266,5 +292,31 @@
             <br>
 
 
+        <!-- LIGHTBOX -->
+        <dialog id="lightbox"><img alt=""></dialog>
+        <script>
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImage = lightbox.querySelector("img");
+
+            // open image in viewer, ESC closes it
+            function openLightbox(event) {
+                event.preventDefault();
+                lightboxImage.src = event.currentTarget.getAttribute("href");
+                lightbox.showModal();
+            }
+
+            // free image after close
+            function clearLightbox() {
+                lightboxImage.src = "";
+            }
+
+            document.querySelectorAll('a[href^="images/"]').forEach(function (link) {
+                link.addEventListener("click", openLightbox);
+            });
+            lightbox.addEventListener("click", function () {
+                lightbox.close();
+            });
+            lightbox.addEventListener("close", clearLightbox);
+        </script>
     </body>
 </html>
